@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    background-color: black;
+}
+
+.gallery {
+    display: flex;
+    height: 100vh; 
+    width: 100vw; 
+    gap: 1px; 
+}
+
+.item {
+    position: relative;
+    width: 25%;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.overlay-text-I {
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 3px; 
+    margin-left: 20px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: "Oswald", sans-serif;
+    transition: transform 0.6s ease;
+}
+
+.overlay-text-II {
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px; 
+    margin-left: 20px;
+    letter-spacing: 1px;
+    font-family: "Oswald", sans-serif;
+    transition: transform 0.6s ease;
+}
+
+.overlay-text {
+    color: white;
+    font-size: 13px;
+    margin-bottom: 10px; 
+    margin-left: 20px;
+    font-family: 'Poppins';
+ 
+    transition: transform 0.6s ease;
+}
+
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+  
+
+.oswald {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.overlay-more {
+    color: aqua;
+    font-size: 16px;
+    margin-left: 20px;
+    font-family: "Poppins", sans-serif;
+    opacity: 0;
+    margin-top: -30px;
+    transition: opacity 0.3s;
+}
+.overlay-more i {
+    margin-left: 5px; 
+    color: aqua;
+    font-size: 15px;
+}
+
+.item:hover img {
+    transform: scale(1.1);
+    filter: blur(5px) grayscale(80%) brightness(0.4); /* Make image blurry and darker */
+}
+
+.item:hover .overlay-text-I, .item:hover .overlay-text-II, .item:hover .overlay-text {
+    transform: translateY(-30px); /* Move text up */
+}
+
+.item:hover .overlay-more {
+    opacity: 1;
+}
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .item {
+        width: calc(33.33% - 1px); /* 3 items per row */
+    }
+    .overlay-text-I, .overlay-text-II {
+        font-size: 1.5em;
+    }
+    .overlay-more {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        width: calc(50% - 1px); /* 2 items per row */
+    }
+    .overlay-text-I, .overlay-text-II {
+        font-size: 1.3em;
+    }
+    .overlay-more {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        width: calc(100% - 1px); /* 1 item per row */
+    }
+    .overlay-text-I, .overlay-text-II {
+        font-size: 1.2em;
+        margin-left: 10px; /* Adjust margin for smaller screens */
+    }
+    .overlay-text {
+        font-size: 11px;
+        margin-left: 10px; /* Adjust margin for smaller screens */
+    }
+    .overlay-more {
+        font-size: 10px;
+        margin-left: 10px; /* Adjust margin for smaller screens */
+    }
+}
