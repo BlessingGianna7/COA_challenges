@@ -7,15 +7,15 @@
 body {
     width: 100%;
     height: 100%;
-    overflow: hidden; 
+    overflow: hidden;
     background-color: black;
 }
 
 .gallery {
     display: flex;
-    height: 100vh; 
-    width: 100vw; 
-    gap: 1px; 
+    height: 100vh;
+    width: 100vw;
+    gap: 1px;
 }
 
 .item {
@@ -45,7 +45,7 @@ body {
     color: white;
     font-size: 1.8em;
     font-weight: bold;
-    margin-bottom: 3px; 
+    margin-bottom: 3px;
     margin-left: 20px;
     letter-spacing: 1px;
     margin-top: 30px;
@@ -57,7 +57,7 @@ body {
     color: white;
     font-size: 1.8em;
     font-weight: bold;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     margin-left: 20px;
     letter-spacing: 1px;
     font-family: "Oswald", sans-serif;
@@ -67,26 +67,12 @@ body {
 .overlay-text {
     color: white;
     font-size: 13px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     margin-left: 20px;
     font-family: 'Poppins';
- 
     transition: transform 0.6s ease;
 }
 
-.poppins-light {
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
-  
-
-.oswald {
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-}
 
 .overlay-more {
     color: aqua;
@@ -97,32 +83,57 @@ body {
     margin-top: -30px;
     transition: opacity 0.3s;
 }
+
 .overlay-more i {
-    margin-left: 5px; 
+    margin-left: 5px;
     color: aqua;
     font-size: 15px;
+
 }
 
+/*fonts*/
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+.oswald {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+/*Hovering effects*/
 .item:hover img {
     transform: scale(1.1);
     filter: blur(5px) grayscale(80%) brightness(0.4);
 }
 
-.item:hover .overlay-text-I, .item:hover .overlay-text-II, .item:hover .overlay-text {
-    transform: translateY(-30px); 
+.item:hover .overlay-text-I,
+.item:hover .overlay-text-II,
+.item:hover .overlay-text {
+    transform: translateY(-30px);
 }
 
 .item:hover .overlay-more {
     opacity: 1;
 }
 
+/*implementing responsiveness*/
 @media (max-width: 1200px) {
     .item {
-        width: calc(33.33% - 1px); 
+        width: calc(33.33% - 1px);
     }
-    .overlay-text-I, .overlay-text-II {
+
+    .overlay-text-I,
+    .overlay-text-II {
         font-size: 1.5em;
     }
+
     .overlay-more {
         font-size: 14px;
     }
@@ -130,11 +141,14 @@ body {
 
 @media (max-width: 768px) {
     .item {
-        width: calc(50% - 1px); 
+        width: calc(50% - 1px);
     }
-    .overlay-text-I, .overlay-text-II {
+
+    .overlay-text-I,
+    .overlay-text-II {
         font-size: 1.3em;
     }
+
     .overlay-more {
         font-size: 12px;
     }
@@ -142,18 +156,22 @@ body {
 
 @media (max-width: 480px) {
     .item {
-        width: calc(100% - 1px); 
+        width: calc(100% - 1px);
     }
-    .overlay-text-I, .overlay-text-II {
+
+    .overlay-text-I,
+    .overlay-text-II {
         font-size: 1.2em;
-        margin-left: 10px; 
+        margin-left: 10px;
     }
+
     .overlay-text {
         font-size: 11px;
-        margin-left: 10px; 
+        margin-left: 10px;
     }
+
     .overlay-more {
         font-size: 10px;
-        margin-left: 10px; 
+        margin-left: 10px;
     }
 }
